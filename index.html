@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: white;
+            text-shadow: 2px 2px 4px red;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        button {
+            font-size: 24px;
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .yes {
+            background-color: red;
+            color: white;
+            border: 3px solid white;
+        }
+        .yes:hover {
+            background-color: darkred;
+            transform: scale(1.1);
+        }
+        .no {
+            background-color: white;
+            color: red;
+            border: 3px solid red;
+        }
+        .no:hover {
+            background-color: lightgray;
+            transform: scale(1.1);
+        }
+        .gif-container {
+            margin-bottom: 20px;
+        }
+        .button-img {
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gif-container">
+        <img id="mainGif" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjRoYWZ4YXQ2bmlrbHAzeTVqNzZ3NDRmZjhxbmtxNjk5eWlqaHVhYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KrC0EOKHnRdr994H3R/giphy.gif" alt="Cute Valentine GIF" width="250">
+    </div>
+    <h1>Will you be my Valentine? ❤️</h1>
+    <div class="buttons">
+        <button class="yes" onclick="acceptLove()">
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHJqeWdieWUwZzdxd21raWh3enE1Z2xpcXJqemJqajUyaTdlcXJmbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tpVKvAabWt3G5csMkT/giphy.gif" alt="Cute Bunny Couple" class="button-img">
+            Yes
+        </button>
+        <button class="no" onclick="growYes()">
+            <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGpiYWM0aTc2dmZ2cGN6dXlpbTU4YXBvdms1OXh5MTJhd2oycnh1byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUOxfd9h4zALTO4G1W/giphy.gif" alt="Sad Bunny" class="button-img">
+            No
+        </button>
+    </div>
+    
+    <script>
+        let yesButton = document.querySelector(".yes");
+        let mainGif = document.getElementById("mainGif");
+        let sizeFactor = 1.5;
+
+        function acceptLove() {
+            mainGif.src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcG10MG1pNHRzdHB1Nm55dzdvbHU0eWE4OXY2dzZ3bzN4ZnBxaTY0NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fyfqhW4oPP35SuAkrd/giphy.gif"; // Happy bunny gif
+            alert("Yay! ❤️ Can't wait to celebrate!");
+        }
+
+        function growYes() {
+            let currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+            yesButton.style.fontSize = (currentSize * sizeFactor) + "px";
+            mainGif.src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXBubmdubjBrYXE5d3dmZW84Nmg5dXViZmRmNzFhaW96eTR0YXFwNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YavErWcDZCMHm/giphy.gif"; // Sad bunny gif
+        }
+    </script>
+</body>
+</html>
